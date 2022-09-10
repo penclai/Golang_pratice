@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("Hello!")
+	// var args []string
+	args := os.Args
+	if len(args)<2 {
+		fmt.Printf("Usage: ./hello-world <argument>\n")
+		os.Exit(1)
+	}
+	fmt.Printf("Hello!\nos.arg: %v\n1st Argument: %v\n", args, args[1:])
 }
